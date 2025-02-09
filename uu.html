@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HhheheHehHE (rAAy's)</title>
     <style>
         body {
@@ -82,38 +82,6 @@
             color: white;
             position: relative;
         }
-        .giphy-container {
-            margin: 20px 0;
-        }
-
-        .giphy-container img {
-            width: 200px; /* Atur ukuran sesuai keinginan */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Pengumuman yang muncul setelah Yes */
-        .announcement-container {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ebe4ca;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .announcement-container img {
-            width: 250px; /* Atur ukuran gif */
-        }
-        .announcement-container p {
-            font-size: 24px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -123,29 +91,20 @@
     </div>
 
     <div class="password-container">
-        <p>Enter the secret password hehe 😋😎: </p>
+        <p>Enter the secret password:</p>
         <input type="password" id="password">
         <button onclick="checkPassword()">Submit</button>
     </div>
 
     <div class="container">
-        <h1>Will you be my Valentine? (PLEAASEE) 😖💐 </h1>
-        <div class="giphy-container">
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3IyY3oxcmI2ZWdpcmM5OWgyZWZxeTVjcTcxc2Z3MHhnd2xxaDZtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WgEGNSJD4h2IU/giphy.gif" alt="Cute Giphy" />
-        </div>
-        <button class="yes" onclick="showAnnouncement()">Yes</button>
+        <h1>Will you be my Valentine?</h1>
+        <button class="yes" onclick="alert('YIPPIE! See U on Friday💝')">Yes</button>
         <button class="no" onmouseover="moveButton()">No</button>
     </div>
 
     <div class="wrong" id="wrong-container">
         <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGFkbGVtdGtyOTV6OW5tOXgyZ3dxbWYzb2pjdmp5MTZlaTRuMW16MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iAIwyKeZlKBgIpH4TZ/giphy.gif" alt="Permission Denied. Restricted access only, sorry. 🥱">
         <p><b>Permission Denied. Restricted access only, sorry. 🥱</b></p>
-    </div>
-
-    <!-- Pengumuman -->
-    <div class="announcement-container" id="announcement-container">
-        <img src="https://media0.giphy.com/media/SvK7Gxcq4QS4fNNjYH/200.webp?cid=ecf05e47w2l2kninwjkql79108xc2qmb0gxs32p2zjj63nwb&ep=v1_stickers_search&rid=200.webp&ct=s" alt="YEEEYYEYEY! SEE U ON FRIDAY MY LOVE WHEHEHHE💝😻">
-        <p>YEEEYYEYEY! SEE U ON FRIDAY MY LOVE WHEHEHHE💝😻</p>
     </div>
 
     <script>
@@ -180,19 +139,8 @@
 
             noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
-
-        // Fungsi untuk menampilkan pengumuman
-        function showAnnouncement() {
-            document.querySelector('.container').style.display = 'none';
-            document.getElementById('announcement-container').style.display = 'block';
-            document.body.style.background = '#f7ddd7'; // Ubah warna background
-
-            document.body.style.backgroundImage = 'url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGVtMjBzc2ZrbWlpaTRlbmlidHdxODRsc3l4YjEwMDI4MWdxaWF5bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/rrasLFSTyi4Th1e8Xo/giphy.gif")';
-            document.body.style.backgroundRepeat = 'repeat';
-            document.body.style.backgroundSize = '200px 230px';
-
-        }
     </script>
 </body>
 </html>
+
 
