@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HhheheHehHE (rAAy's)</title>
     <style>
         body {
@@ -87,13 +87,12 @@
         }
 
         .giphy-container img {
-            width: 200px; /* Atur ukuran sesuai keinginan */
+            width: 200px;
             height: auto;
             display: block;
             margin: 0 auto;
         }
 
-        /* Pengumuman yang muncul setelah Yes */
         .announcement-container {
             display: none;
             position: fixed;
@@ -108,7 +107,7 @@
         }
 
         .announcement-container img {
-            width: 250px; /* Atur ukuran gif */
+            width: 250px;
         }
         .announcement-container p {
             font-size: 24px;
@@ -134,7 +133,7 @@
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3IyY3oxcmI2ZWdpcmM5OWgyZWZxeTVjcTcxc2Z3MHhnd2xxaDZtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WgEGNSJD4h2IU/giphy.gif" alt="Cute Giphy" />
         </div>
         <button class="yes" onclick="showAnnouncement()">Yes</button>
-        <button class="no" onmouseover="moveButton()">No</button>
+        <button class="no" onmouseover="moveButton(event)" ontouchstart="moveButton(event)">No</button>
     </div>
 
     <div class="wrong" id="wrong-container">
@@ -142,7 +141,6 @@
         <p><b>Permission Denied. Restricted access only, sorry. 🥱</b></p>
     </div>
 
-    <!-- Pengumuman -->
     <div class="announcement-container" id="announcement-container">
         <img src="https://media0.giphy.com/media/SvK7Gxcq4QS4fNNjYH/200.webp?cid=ecf05e47w2l2kninwjkql79108xc2qmb0gxs32p2zjj63nwb&ep=v1_stickers_search&rid=200.webp&ct=s" alt="YEEEYYEYEY! SEE U ON FRIDAY MY LOVE WHEHEHHE💝😻">
         <p>YEEEYYEYEY! SEE U ON FRIDAY MY LOVE WHEHEHHE💝😻</p>
@@ -166,7 +164,7 @@
             }
         }
 
-        function moveButton() {
+        function moveButton(event) {
             const noButton = document.querySelector('.no');
             const container = document.querySelector('.container');
             const containerRect = container.getBoundingClientRect();
@@ -179,20 +177,23 @@
             const randomY = Math.floor(Math.random() * maxY);
 
             noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+            if (event.type === "touchstart") {
+                event.preventDefault();
+            }
         }
 
-        // Fungsi untuk menampilkan pengumuman
         function showAnnouncement() {
             document.querySelector('.container').style.display = 'none';
             document.getElementById('announcement-container').style.display = 'block';
-            document.body.style.background = '#f7ddd7'; // Ubah warna background
+            document.body.style.background = '#f7ddd7';
 
             document.body.style.backgroundImage = 'url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGVtMjBzc2ZrbWlpaTRlbmlidHdxODRsc3l4YjEwMDI4MWdxaWF5bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/rrasLFSTyi4Th1e8Xo/giphy.gif")';
             document.body.style.backgroundRepeat = 'repeat';
-            document.body.style.backgroundSize = '200px 230px';
-
+            document.body.style.backgroundSize = '50x 70px';
         }
     </script>
 </body>
 </html>
+
 
