@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HhheheHehHE (rAAy's)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8e4e5;
+            background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGdveHU1bTZjaTVwc3p3djU4MnkxcHhwZm10b3QwMWd5c3k5cXA3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/G7MMj69Bg7mrnP1MzA/giphy.gif');
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            transition: background 0.5s;
+        }
+        .container, .password-container {
+            text-align: center;
+            background: rgb(240, 238, 227);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .password-container {
+            display: none;
+            background: rgb(235, 235, 208);
+        }
+        .container {
+            display: none;
+        }
+        .sticker-container {
+            text-align: center;
+        }
+        .sticker-container img {
+            width: 150px;
+            cursor: pointer;
+        }
+        .wrong {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: gray;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .wrong img {
+            width: 200px;
+        }
+        .wrong p {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        input {
+            padding: 10px;
+            border: 2px solid yellow;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticker-container" onclick="showPasswordInput()">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW1odnJxcWllc3VnZTEzMDd1cjdxZHM4bmZqaHB3c3Mya2Z1Z212aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/6vlGjz4dDuzBgzeHs5/giphy.gif" alt="sticker">
+        <p>Click me!</p>
+    </div>
+
+    <div class="password-container">
+        <p>Enter the secret password:</p>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <button class="yes" onclick="alert('YIPPIE! See U on Friday💝')">Yes</button>
+        <button class="no" onmouseover="moveButton()">No</button>
+    </div>
+
+    <div class="wrong" id="wrong-container">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGFkbGVtdGtyOTV6OW5tOXgyZ3dxbWYzb2pjdmp5MTZlaTRuMW16MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iAIwyKeZlKBgIpH4TZ/giphy.gif" alt="Permission Denied. Restricted access only, sorry. 🥱">
+        <p><b>Permission Denied. Restricted access only, sorry. 🥱</b></p>
+    </div>
+
+    <script>
+        function showPasswordInput() {
+            document.querySelector('.sticker-container').style.display = 'none';
+            document.querySelector('.password-container').style.display = 'block';
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === "Raden Andhika Rizqi Ramadhan Yudadibrata") {
+                document.querySelector('.password-container').style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+            } else {
+                document.body.style.background = 'gray';
+                document.querySelector('.password-container').style.display = 'none';
+                document.getElementById('wrong-container').style.display = 'flex';
+            }
+        }
+
+        function moveButton() {
+            const noButton = document.querySelector('.no');
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = noButton.getBoundingClientRect();
+
+            const maxX = containerRect.width - buttonRect.width;
+            const maxY = containerRect.height - buttonRect.height;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+    </script>
+</body>
+</html>
